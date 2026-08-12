@@ -70,8 +70,8 @@ Desktop.ini
 .streamlit/secrets.toml
 
 # ==================== 本项目：数据产物 ====================
-# 原始 / 生成数据（体积大或可由脚本重新生成，如需版本管理建议 DVC / Git LFS）
-data/*.csv
+# 日度客流与特征 CSV（jiuzhaigou_daily.csv / jiuzhaigou_features.csv）已入库，供 Streamlit Cloud 展示真实数据；
+# 原始 Excel 与 Power BI 中间数据体积较大或可再生成，仍忽略
 data/*.xlsx
 data/powerbi/*.csv
 
