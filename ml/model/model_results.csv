@@ -1,0 +1,4 @@
+Model,R²,MAE,RMSE,MAPE
+Linear Regression,0.8239,2435,4052,15.9
+Random Forest,0.9632,1115,1853,5.9
+XGBoost (最优),0.9665,997,1769,5.1
