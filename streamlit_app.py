@@ -92,8 +92,8 @@ kpi_data = [
     ("WEEK", f"{avg_val:,.0f}", "7日均值", f"{week_change:+.1f}%", week_change, "人次"),
     ("MAX", f"{max_val:,.0f}", "历史最高", "", 0, "人次"),
     ("MIN", f"{min_val:,.0f}", "历史最低", "", 0, "人次"),
-    ("R²", f"{metrics.get('r2', '—')}", "模型准确度", f"MAE {metrics.get('mae', '—'):,.0f}", 0, ""),
-    ("MAPE", f"{metrics.get('mape', '—'):.1f}%", "预测误差率", "", 0, ""),
+    ("R²", f"{metrics.get('r2', '—')}", "模型准确度", f"MAE {metrics.get('mae', 0):,.0f}" if isinstance(metrics.get('mae'), (int, float)) else "MAE —", 0, ""),
+    ("MAPE", f"{metrics.get('mape', 0):.1f}%" if isinstance(metrics.get('mape'), (int, float)) else "—", "预测误差率", "", 0, ""),
 ]
 
 for i, (kpi_id, value, label, delta, delta_val, unit) in enumerate(kpi_data):
@@ -197,9 +197,9 @@ with chart_col2:
         if metrics:
             perf_items = [
                 ("R2 决定系数", f"{metrics.get('r2', '—')}", "越接近1越好"),
-                ("MAE 平均误差", f"{metrics.get('mae', '—'):,.0f} 人次", "预测偏差均值"),
-                ("RMSE 均方根误差", f"{metrics.get('rmse', '—'):,.0f} 人次", "大误差惩罚"),
-                ("MAPE 误差率", f"{metrics.get('mape', '—'):.1f}%", "相对误差百分比"),
+                ("MAE 平均误差", f"{metrics.get('mae', 0):,.0f} 人次" if isinstance(metrics.get('mae'), (int, float)) else "MAE —", "预测偏差均值"),
+                ("RMSE 均方根误差", f"{metrics.get('rmse', 0):,.0f} 人次" if isinstance(metrics.get('rmse'), (int, float)) else "RMSE —", "大误差惩罚"),
+                ("MAPE 误差率", f"{metrics.get('mape', 0):.1f}%" if isinstance(metrics.get('mape'), (int, float)) else "MAPE —", "相对误差百分比"),
             ]
             for label, val, desc in perf_items:
                 st.markdown(f"""

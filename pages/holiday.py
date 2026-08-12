@@ -16,7 +16,7 @@ from plotly.subplots import make_subplots
 
 from utils.navbar import render_navbar, render_sidebar
 from utils.holidays import get_holiday_map
-from config import DAILY_CSV
+from config import DAILY_CSV, HOLIDAY_COVER_UNTIL_YEAR
 
 render_navbar("节假日分析")
 auto_refresh, refresh_interval = render_sidebar()
@@ -26,22 +26,26 @@ WEEKDAY_CN = {
     "Friday": "周五", "Saturday": "周六", "Sunday": "周日",
 }
 
-
 @st.cache_data(ttl=3600)
 def load_daily():
-    """加载真实客流主数据"""
+    """加载真实客流主数据；文件缺失时返回带列名的空 DataFrame（触发页面降级提示）"""
     daily_path = DAILY_CSV
+    if not os.path.exists(daily_path):
+        return pd.DataFrame(columns=["date", "visitors", "holiday_name", "is_holiday"])
     daily = pd.read_csv(daily_path, encoding="utf-8-sig")
     daily["date"] = pd.to_datetime(daily["date"])
     daily["visitors"] = daily["visitors"].astype(float)
     daily = daily.sort_values("date").reset_index(drop=True)
+    return daily
     return daily
 
 
 def load_holiday_data():
     """合并节假日标记到日度客流"""
     daily = load_daily()
-    holiday_map = get_holiday_map(cover_until_year=2027)
+    if daily.empty:
+        return daily
+    holiday_map = get_holiday_map(cover_until_year=HOLIDAY_COVER_UNTIL_YEAR)
     daily["holiday_name"] = daily["date"].dt.strftime("%Y-%m-%d").map(holiday_map)
     daily["is_holiday"] = daily["holiday_name"].notna().astype(int)
     return daily
