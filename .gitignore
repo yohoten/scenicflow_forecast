@@ -1,0 +1,90 @@
+# ==================== Python ====================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==================== 虚拟环境 ====================
+venv/
+env/
+ENV/
+.venv/
+.venv313/
+virtualenv/
+pyvenv.cfg
+
+# ==================== 测试与覆盖率 ====================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+.cache/
+hypothesis/
+.pytest_cache/
+
+# ==================== IDE / 编辑器 ====================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+*.launch
+
+# ==================== OS ====================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==================== 环境变量与密钥 ====================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ==================== Streamlit ====================
+.streamlit/secrets.toml
+
+# ==================== 本项目：数据产物 ====================
+# 原始 / 生成数据（体积大或可由脚本重新生成，如需版本管理建议 DVC / Git LFS）
+data/*.csv
+data/*.xlsx
+data/powerbi/*.csv
+
+# ==================== 本项目：模型与训练产物 ====================
+ml/model/*
+*.npy
+
+# ==================== 日志与临时文件 ====================
+*.log
+*.tmp
+logs/
+tmp/
+
+# ==================== 验证脚手架 ====================
+# 含 23MB xlsx 与本地 sqlite，不入库
+.validate/

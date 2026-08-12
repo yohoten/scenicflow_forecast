@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420">
+<rect width="760" height="420" fill="#ffffff"/>
+<text x="380" y="30" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#222">RFM 分群结果（UCI Online Retail · 4372 客户）</text>
+<line x1="70" y1="340.0" x2="690" y2="340.0" stroke="#eee"/>
+<text x="62" y="344.0" font-family="sans-serif" font-size="11" text-anchor="end" fill="#888">0</text>
+<line x1="70" y1="270.0" x2="690" y2="270.0" stroke="#eee"/>
+<text x="62" y="274.0" font-family="sans-serif" font-size="11" text-anchor="end" fill="#888">500</text>
+<line x1="70" y1="200.0" x2="690" y2="200.0" stroke="#eee"/>
+<text x="62" y="204.0" font-family="sans-serif" font-size="11" text-anchor="end" fill="#888">1000</text>
+<line x1="70" y1="130.0" x2="690" y2="130.0" stroke="#eee"/>
+<text x="62" y="134.0" font-family="sans-serif" font-size="11" text-anchor="end" fill="#888">1500</text>
+<line x1="70" y1="60.0" x2="690" y2="60.0" stroke="#eee"/>
+<text x="62" y="64.0" font-family="sans-serif" font-size="11" text-anchor="end" fill="#888">2000</text>
+<text x="18" y="200" font-family="sans-serif" font-size="12" fill="#3b6fb5" transform="rotate(-90 18 200)" text-anchor="middle">客户数</text>
+<text x="698" y="344.0" font-family="sans-serif" font-size="11" text-anchor="start" fill="#e08a2b">0</text>
+<text x="698" y="274.0" font-family="sans-serif" font-size="11" text-anchor="start" fill="#e08a2b">1375</text>
+<text x="698" y="204.0" font-family="sans-serif" font-size="11" text-anchor="start" fill="#e08a2b">2750</text>
+<text x="698" y="134.0" font-family="sans-serif" font-size="11" text-anchor="start" fill="#e08a2b">4125</text>
+<text x="698" y="64.0" font-family="sans-serif" font-size="11" text-anchor="start" fill="#e08a2b">5500</text>
+<text x="748" y="200" font-family="sans-serif" font-size="12" fill="#e08a2b" transform="rotate(90 748 200)" text-anchor="middle">平均消费额(£)</text>
+<rect x="93.9" y="62.1" width="49.6" height="277.9" fill="#3b6fb5"/>
+<rect x="151.5" y="313.6" width="49.6" height="26.4" fill="#e08a2b"/>
+<text x="118.7" y="57.1" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#3b6fb5">1985</text>
+<text x="176.3" y="308.6" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#e08a2b">519</text>
+<text x="147.5" y="358.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">一</text>
+<text x="147.5" y="373.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">般</text>
+<text x="147.5" y="388.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">客</text>
+<text x="147.5" y="403.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">户</text>
+<rect x="248.9" y="183.6" width="49.6" height="156.4" fill="#3b6fb5"/>
+<rect x="306.5" y="70.2" width="49.6" height="269.8" fill="#e08a2b"/>
+<text x="273.7" y="178.6" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#3b6fb5">1117</text>
+<text x="331.3" y="65.2" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#e08a2b">5300</text>
+<text x="302.5" y="358.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">重</text>
+<text x="302.5" y="373.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">要</text>
+<text x="302.5" y="388.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">价</text>
+<text x="302.5" y="403.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">值</text>
+<text x="302.5" y="418.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">客</text>
+<text x="302.5" y="433.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">户</text>
+<rect x="403.9" y="253.3" width="49.6" height="86.7" fill="#3b6fb5"/>
+<rect x="461.5" y="300.4" width="49.6" height="39.6" fill="#e08a2b"/>
+<text x="428.7" y="248.3" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#3b6fb5">619</text>
+<text x="486.3" y="295.4" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#e08a2b">778</text>
+<text x="457.5" y="358.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">重</text>
+<text x="457.5" y="373.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">要</text>
+<text x="457.5" y="388.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">发</text>
+<text x="457.5" y="403.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">展</text>
+<text x="457.5" y="418.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">客</text>
+<text x="457.5" y="433.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">户</text>
+<rect x="558.9" y="253.6" width="49.6" height="86.4" fill="#3b6fb5"/>
+<rect x="616.5" y="217.9" width="49.6" height="122.1" fill="#e08a2b"/>
+<text x="583.7" y="248.6" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#3b6fb5">617</text>
+<text x="641.3" y="212.9" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#e08a2b">2398</text>
+<text x="612.5" y="358.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">重</text>
+<text x="612.5" y="373.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">要</text>
+<text x="612.5" y="388.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">保</text>
+<text x="612.5" y="403.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">持</text>
+<text x="612.5" y="418.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">客</text>
+<text x="612.5" y="433.0" font-family="Microsoft YaHei, sans-serif" font-size="12" text-anchor="middle" fill="#333">户</text>
+<rect x="80" y="398" width="14" height="14" fill="#3b6fb5"/>
+<text x="100" y="409" font-family="sans-serif" font-size="12" fill="#333">客户数</text>
+<rect x="170" y="398" width="14" height="14" fill="#e08a2b"/>
+<text x="190" y="409" font-family="sans-serif" font-size="12" fill="#333">平均消费额(£)</text>
+</svg>
