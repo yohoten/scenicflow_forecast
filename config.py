@@ -37,3 +37,9 @@ MODEL_RESULTS_CSV = os.path.join(MODEL_DIR, "model_results.csv")
 HOLIDAY_COVER_UNTIL_YEAR = 2027      # 节假日数据覆盖到该年份（未来年份自动用简化规则回退）
 NEAR_HOLIDAY_DAYS = 3                # 临近节假日窗口：前后 N 天记为 near_holiday
 GOLDEN_WEEK_RULES = {10: 7, 2: 5}    # 黄金周简化规则: {月份: 该月 1~N 日计为黄金周}
+
+# ===== 承载量与预警阈值 =====
+CAPACITY = 41000                     # 景区每日承载上限（人次）
+WARNING_RATIO = 0.7                  # 黄色预警阈值：客流 > 承载量 * 0.7
+DANGER_RATIO = 0.9                   # 红色预警阈值：客流 > 承载量 * 0.9
+PEAK_RATIO = 0.8                     # 高峰预警阈值（用于预测判断）

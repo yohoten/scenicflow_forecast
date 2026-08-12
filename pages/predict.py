@@ -16,6 +16,8 @@ from utils.predictor import (
     generate_historical_trend, is_model_ready
 )
 from utils.navbar import render_navbar, render_sidebar
+from config import CAPACITY, WARNING_RATIO, DANGER_RATIO
+from utils.levels import load_level, badge_html
 
 # ========== 导航栏 + 侧边栏 ==========
 render_navbar("智能预测")
@@ -42,7 +44,7 @@ if auto_refresh and not forecast_df.empty:
     forecast_df["上限"] = (forecast_df["上限"] * (1 + np.random.uniform(0, 0.03, len(forecast_df)))).astype(int)
     forecast_df["下限"] = (forecast_df["下限"] * (1 + np.random.uniform(-0.03, 0, len(forecast_df)))).astype(int)
 
-capacity = 41000
+capacity = CAPACITY
 
 # ========== 模型状态 ==========
 st.markdown(f"""
@@ -215,8 +217,8 @@ with col_main:
             peak = forecast_df["预测"].max()
             peak_date = forecast_df.loc[forecast_df["预测"].idxmax(), "日期"]
             avg_forecast = forecast_df["预测"].mean()
-            warn_days = int((forecast_df["预测"] > capacity * 0.7).sum())
-            high_days = int((forecast_df["预测"] > capacity * 0.9).sum())
+            warn_days = int((forecast_df["预测"] > capacity * WARNING_RATIO).sum())
+            high_days = int((forecast_df["预测"] > capacity * DANGER_RATIO).sum())
             mom_vals = forecast_df["预测"].pct_change().dropna() * 100
             trend_text = "持续上升" if mom_vals.mean() > 0.5 else ("持续下降" if mom_vals.mean() < -0.5 else "相对平稳")
             trend_color = "#34d399" if mom_vals.mean() > 0.5 else ("#f87171" if mom_vals.mean() < -0.5 else "#fbbf24")
@@ -256,8 +258,8 @@ with col_main:
             
             with col_right:
                 st.markdown('<div style="height:10px;"></div>', unsafe_allow_html=True)
-                high_count = int((forecast_df["预测"] > capacity * 0.9).sum())
-                warn_count = int(((forecast_df["预测"] > capacity * 0.7) & (forecast_df["预测"] <= capacity * 0.9)).sum())
+                high_count = int((forecast_df["预测"] > capacity * DANGER_RATIO).sum())
+                warn_count = int(((forecast_df["预测"] > capacity * WARNING_RATIO) & (forecast_df["预测"] <= capacity * DANGER_RATIO)).sum())
                 normal_count = max(0, len(forecast_df) - high_count - warn_count)
                 
                 fig_pie = go.Figure(data=[go.Pie(
@@ -301,12 +303,7 @@ with col_side:
                 upper = row["上限"]
                 lower = row["下限"]
                 
-                if pred > capacity * 0.9:
-                    badge = '<span class="badge badge-red">高负荷</span>'
-                elif pred > capacity * 0.7:
-                    badge = '<span class="badge badge-yellow">预警</span>'
-                else:
-                    badge = '<span class="badge badge-green">正常</span>'
+                badge = badge_html(load_level(pred))
                 
                 load_rate = min(pred / capacity * 100, 100)
                 bar_color = "#ef4444" if load_rate > 90 else ("#f59e0b" if load_rate > 70 else "#10b981")

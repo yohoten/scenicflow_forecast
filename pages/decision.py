@@ -12,6 +12,7 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.predictor import predict_next_7_days, get_model_metrics, generate_historical_trend, is_model_ready
 from utils.navbar import render_navbar, render_sidebar
+from config import CAPACITY, WARNING_RATIO, DANGER_RATIO
 
 render_navbar("运营决策")
 auto_refresh, refresh_interval = render_sidebar()
@@ -21,9 +22,9 @@ hist_df = generate_historical_trend(365)
 metrics = get_model_metrics()
 model_ready = is_model_ready()
 
-capacity = 41000
-high_load_threshold = capacity * 0.9
-warning_threshold = capacity * 0.7
+capacity = CAPACITY
+high_load_threshold = capacity * DANGER_RATIO
+warning_threshold = capacity * WARNING_RATIO
 
 with st.container(border=True):
     st.markdown('<div class="panel-header">决策依据摘要</div>', unsafe_allow_html=True)

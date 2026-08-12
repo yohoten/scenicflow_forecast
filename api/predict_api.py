@@ -15,11 +15,10 @@ from utils.predictor import (
     predict_next_7_days, get_model_metrics, get_feature_importance,
     generate_historical_trend, is_model_ready
 )
+from config import CAPACITY, WARNING_RATIO, DANGER_RATIO
 
 app = Flask(__name__)
 CORS(app)
-
-CAPACITY = 41000
 
 
 def _to_json(df):
@@ -73,10 +72,10 @@ def forecast():
     for item in result:
         pred = item.get("预测", 0)
         item["load_rate"] = round(pred / CAPACITY * 100, 1)
-        if pred > CAPACITY * 0.9:
+        if pred > CAPACITY * DANGER_RATIO:
             item["warning"] = "danger"
             item["warning_text"] = "红色预警"
-        elif pred > CAPACITY * 0.7:
+        elif pred > CAPACITY * WARNING_RATIO:
             item["warning"] = "warning"
             item["warning_text"] = "黄色预警"
         else:

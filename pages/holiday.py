@@ -16,7 +16,7 @@ from plotly.subplots import make_subplots
 
 from utils.navbar import render_navbar, render_sidebar
 from utils.holidays import get_holiday_map
-from config import DAILY_CSV, HOLIDAY_COVER_UNTIL_YEAR
+from config import DAILY_CSV, HOLIDAY_COVER_UNTIL_YEAR, CAPACITY
 
 render_navbar("节假日分析")
 auto_refresh, refresh_interval = render_sidebar()
@@ -239,7 +239,7 @@ with st.container(border=True):
     detail["星期"] = detail["date"].dt.day_name().map(WEEKDAY_CN)
     detail["日期"] = detail["date"].dt.strftime("%Y-%m-%d")
     detail = detail.sort_values("date", ascending=False).reset_index(drop=True)
-    detail["承载率"] = (detail["visitors"] / 41000 * 100).apply(lambda x: f"{x:.1f}%")
+    detail["承载率"] = (detail["visitors"] / CAPACITY * 100).apply(lambda x: f"{x:.1f}%")
     detail["客流量"] = detail["visitors"].apply(lambda x: f"{x:,.0f}")
     detail = detail.rename(columns={"holiday_name": "节假日"})
 
