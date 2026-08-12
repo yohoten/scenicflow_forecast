@@ -20,21 +20,20 @@ auto_refresh, refresh_interval = render_sidebar()
 
 @st.cache_data(ttl=3600)
 def load_data():
-    def load_data():
-        data = {"daily": None, "features": None, "feat_imp": None, "model_results": None}
-        daily_path = DAILY_CSV
-        if os.path.exists(daily_path):
-            data["daily"] = pd.read_csv(daily_path, encoding="utf-8-sig")
-            data["daily"]["date"] = pd.to_datetime(data["daily"]["date"])
-        feat_path = FEATURES_CSV
-        if os.path.exists(feat_path):
-            data["features"] = pd.read_csv(feat_path, encoding="utf-8-sig")
-            data["features"]["date"] = pd.to_datetime(data["features"]["date"])
-        imp_path = FEATURE_IMPORTANCE_CSV
-        if os.path.exists(imp_path):
-            data["feat_imp"] = pd.read_csv(imp_path)
-        results_path = MODEL_RESULTS_CSV
-        data["model_results"] = pd.read_csv(results_path, index_col=0)
+    data = {"daily": None, "features": None, "feat_imp": None, "model_results": None}
+    daily_path = DAILY_CSV
+    if os.path.exists(daily_path):
+        data["daily"] = pd.read_csv(daily_path, encoding="utf-8-sig")
+        data["daily"]["date"] = pd.to_datetime(data["daily"]["date"])
+    feat_path = FEATURES_CSV
+    if os.path.exists(feat_path):
+        data["features"] = pd.read_csv(feat_path, encoding="utf-8-sig")
+        data["features"]["date"] = pd.to_datetime(data["features"]["date"])
+    imp_path = FEATURE_IMPORTANCE_CSV
+    if os.path.exists(imp_path):
+        data["feat_imp"] = pd.read_csv(imp_path)
+    results_path = MODEL_RESULTS_CSV
+    data["model_results"] = pd.read_csv(results_path, index_col=0)
     return data
 
 data = load_data()
